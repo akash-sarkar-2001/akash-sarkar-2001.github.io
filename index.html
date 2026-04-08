@@ -58,7 +58,10 @@ body {
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
-  cursor: crosshair;
+  
+  /* Replace 'crosshair' with your custom image path and a fallback */
+  cursor: url('cursor.png'), crosshair; 
+  
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
