@@ -429,6 +429,9 @@ section {
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 .project-card::after {
@@ -480,7 +483,7 @@ section {
   margin-bottom: 2rem;
 }
 
-.tags {
+tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -837,7 +840,7 @@ footer {
   </p>
 
   <p class="hero-desc">
-    Cybersecurity postgraduate engineering the intersection of offense and defense — identifying 30+ enterprise vulnerabilities, building ML threat intelligence pipelines, and architecting Zero Trust systems.
+    Cybersecurity postgraduate engineering the intersection of offense and defense — identifying 30+ enterprise vulnerabilities, building ML threat intelligence pipelines, and architecting Zero[...]  
   </p>
 
   <div class="hero-ctas">
@@ -880,7 +883,7 @@ footer {
       <div>
         <p class="exp-org">C-DAC · Centre for Development of Advanced Computing</p>
         <h3 class="exp-role">Ethical Hacking & Penetration Testing Intern</h3>
-        <p class="exp-desc">Performed enterprise-level VAPT across network and web environments. Identified and documented 30+ high/medium-risk vulnerabilities using Nmap, Metasploit, and Wireshark. Prepared remediation reports aligned with OWASP Top 10.</p>
+        <p class="exp-desc">Performed enterprise-level VAPT across network and web environments. Identified and documented 30+ high/medium-risk vulnerabilities using Nmap, Metasploit, and Wiresha[...]  
         <span class="exp-badge">REMOTE</span>
       </div>
       <div>
@@ -892,7 +895,7 @@ footer {
       <div>
         <p class="exp-org">Academy of Skill Development · Kolkata, IN</p>
         <h3 class="exp-role">Cybersecurity & Digital Forensics Intern</h3>
-        <p class="exp-desc">Conducted live VAPT and forensic investigations on compromised systems. Analyzed attack patterns and recommended security hardening measures to reduce risk exposure across client environments.</p>
+        <p class="exp-desc">Conducted live VAPT and forensic investigations on compromised systems. Analyzed attack patterns and recommended security hardening measures to reduce risk exposure ac[...]  
         <span class="exp-badge">ON-SITE</span>
       </div>
       <div>
@@ -904,7 +907,7 @@ footer {
       <div>
         <p class="exp-org">Ardent Computech Pvt. Ltd · Kolkata, IN</p>
         <h3 class="exp-role">Cybersecurity & Ethical Hacking (Python) Intern</h3>
-        <p class="exp-desc">Built Python tools for network scanning, log analysis, and vulnerability detection. Simulated real-world attack scenarios in Linux environments to study exploitation techniques.</p>
+        <p class="exp-desc">Built Python tools for network scanning, log analysis, and vulnerability detection. Simulated real-world attack scenarios in Linux environments to study exploitation t[...]  
         <span class="exp-badge">ON-SITE</span>
       </div>
       <div>
@@ -923,11 +926,11 @@ footer {
   </div>
 
   <div class="projects-grid">
-    <div class="project-card">
+    <a class="project-card" href="https://github.com/akash-sarkar-2001/ThreatWeaver" target="_blank" rel="noopener noreferrer">
       <p class="project-id">PRJ-001 // ONGOING</p>
       <span class="project-status">● ACTIVE DEVELOPMENT</span>
-      <h3 class="project-name"><a href="https://github.com/akash-sarkar-2001" target="_blank">ThreatWeaver</a></h3>
-      <p class="project-desc">A correlated Zero Trust security engine transforming raw Active Directory log telemetry into structured, explainable threat intelligence using ML anomaly detection and behavioral rules. Integrates MITRE ATT&CK mapping and constrained-AI reporting for analyst-friendly automated summaries.</p>
+      <h3 class="project-name">ThreatWeaver</h3>
+      <p class="project-desc">A correlated Zero Trust security engine transforming raw Active Directory log telemetry into structured, explainable threat intelligence using ML anomaly detection a[...]  
       <div class="tags">
         <span class="tag">Python</span>
         <span class="tag">Active Directory</span>
@@ -935,12 +938,12 @@ footer {
         <span class="tag">ML / Anomaly Detection</span>
         <span class="tag">JavaScript</span>
       </div>
-    </div>
+    </a>
 
-    <div class="project-card">
+    <a class="project-card" href="https://github.com/akash-sarkar-2001/secure-file-storage" target="_blank" rel="noopener noreferrer">
       <p class="project-id">PRJ-002 // COMPLETE</p>
-      <h3 class="project-name"><a href="https://github.com/akash-sarkar-2001" target="_blank">Secure File Storage</a></h3>
-      <p class="project-desc">Designed and deployed a hardened file storage system on a Kali Linux VPS using Flask and MongoDB, featuring Role-Based Access Control (RBAC), Two-Factor Authentication, AES encryption, and blockchain-based immutable audit logs with real-time alerting.</p>
+      <h3 class="project-name">Secure File Storage</h3>
+      <p class="project-desc">Designed and deployed a hardened file storage system on a Kali Linux VPS using Flask and MongoDB, featuring Role-Based Access Control (RBAC), Two-Factor Authenticati[...]  
       <div class="tags">
         <span class="tag">Kali Linux</span>
         <span class="tag">Flask</span>
@@ -948,18 +951,18 @@ footer {
         <span class="tag">Blockchain</span>
         <span class="tag">MongoDB</span>
       </div>
-    </div>
+    </a>
 
-    <div class="project-card">
+    <a class="project-card" href="https://github.com/akash-sarkar-2001/phishing-techniques" target="_blank" rel="noopener noreferrer">
       <p class="project-id">PRJ-003 // COMPLETE</p>
-      <h3 class="project-name"><a href="https://github.com/akash-sarkar-2001" target="_blank">Phishing Simulation Toolkit</a></h3>
-      <p class="project-desc">A Python toolkit to simulate phishing attacks, test organizational defenses, and implement user-awareness countermeasures. Includes detection mechanisms and response playbooks for security teams.</p>
+      <h3 class="project-name">Phishing Simulation Toolkit</h3>
+      <p class="project-desc">A Python toolkit to simulate phishing attacks, test organizational defenses, and implement user-awareness countermeasures. Includes detection mechanisms and response[...]  
       <div class="tags">
         <span class="tag">Python</span>
         <span class="tag">Social Engineering</span>
         <span class="tag">Detection</span>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 
@@ -998,83 +1001,8 @@ footer {
     <h2 class="section-title">EDUCATION</h2>
     <div class="section-line"></div>
   </div>
-
-  <div class="edu-card" data-cgpa="8.15">
-    <p class="edu-degree">M.TECH · CYBER FORENSICS & INFORMATION SECURITY</p>
-    <h3 class="edu-school">College of Engineering Kallooppara</h3>
-    <p class="edu-meta">Pathanamthitta, IN &nbsp;·&nbsp; Expected 06/2026 &nbsp;·&nbsp; CGPA: 8.15/10</p>
-  </div>
-
-  <div class="edu-card" data-cgpa="7.42">
-    <p class="edu-degree">B.TECH · COMPUTER SCIENCE & ENGINEERING</p>
-    <h3 class="edu-school">School of Engineering and Technology</h3>
-    <p class="edu-meta">Dimapur, IN &nbsp;·&nbsp; Graduated 07/2024 &nbsp;·&nbsp; CGPA: 7.42/10</p>
-  </div>
-
-  <div class="section-header" style="margin-top: 4rem;">
-    <span class="section-num" style="font-size: 3rem;">05</span>
-    <h2 class="section-title" style="font-size: 2rem;">CERTIFICATIONS & ACTIVITY</h2>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="certs-grid" style="margin-bottom: 2rem;">
-    <div class="cert-card">
-      <p class="cert-issuer">PwC Switzerland</p>
-      <p class="cert-name">Cybersecurity Job Simulation</p>
-    </div>
-    <div class="cert-card">
-      <p class="cert-issuer">ANZ Australia</p>
-      <p class="cert-name">Cybersecurity Management</p>
-    </div>
-  </div>
-
-  <div class="activity-list">
-    <div class="activity-item">
-      <span class="activity-icon">[ COORD ]</span>
-      <p class="activity-text"><strong>Coordinator — Techaura 2023</strong><br>Led and organized technical events with 100+ participants across competitive rounds.</p>
-    </div>
-    <div class="activity-item">
-      <span class="activity-icon">[ EVENT ]</span>
-      <p class="activity-text"><strong>Participant — BSides Kerala 2025</strong><br>Engaged with industry professionals on threat intelligence, red teaming, and security trends.</p>
-    </div>
-    <div class="activity-item">
-      <span class="activity-icon">[ CTF &nbsp; ]</span>
-      <p class="activity-text"><strong>TryHackMe — Advent of Cyber 2025</strong><br>Completed 24 consecutive hands-on cybersecurity challenges across forensics, web, and OSINT.</p>
-    </div>
-  </div>
+  
+[...]  
 </section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-header" style="justify-content: center; text-align: center; flex-direction: column; align-items: center; gap: 0.5rem;">
-    <span class="section-num">06</span>
-    <h2 class="section-title">CONTACT</h2>
-  </div>
-
-  <h2 class="contact-big">LET'S BUILD SOMETHING SECURE</h2>
-
-  <p style="font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--text-dim); letter-spacing: 2px; margin-bottom: 1rem;">
-    KRISHNANAGAR, IN &nbsp;·&nbsp; +91-8900022999
-  </p>
-
-  <div class="contact-links">
-    <a href="mailto:i.am.akash.sarkar.2001@gmail.com" class="contact-link">
-      <span class="link-arrow">→</span> EMAIL
-    </a>
-    <a href="https://linkedin.com/in/iakash2001sarkar" target="_blank" class="contact-link">
-      <span class="link-arrow">→</span> LINKEDIN
-    </a>
-    <a href="https://github.com/akash-sarkar-2001" target="_blank" class="contact-link">
-      <span class="link-arrow">→</span> GITHUB
-    </a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <span class="footer-brand">AKASH.SEC // 2026</span>
-  <span class="footer-copy">BUILT WITH INTENT · SECURED BY DESIGN</span>
-</footer>
-
 </body>
 </html>
