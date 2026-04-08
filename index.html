@@ -347,6 +347,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
+      text-align: center;
       padding: 0 8%;
       z-index: 2;
       overflow: hidden;
@@ -359,7 +361,7 @@
       border-radius: 50%;
       background: radial-gradient(circle, var(--cyan-dim) 0%, transparent 70%);
       top: 50%;
-      left: 30%;
+      left: 50%;
       transform: translate(-50%, -50%);
       pointer-events: none;
       animation: drift 8s ease-in-out infinite alternate;
@@ -480,6 +482,8 @@
 
     .hero-desc {
       max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
       font-size: 1rem;
       line-height: 1.8;
       color: var(--text-dim);
@@ -490,6 +494,7 @@
 
     .hero-ctas {
       display: flex;
+      justify-content: center;
       gap: 1.2rem;
       opacity: 0;
       animation: fadeUp 0.8s ease 1.1s forwards;
@@ -1338,8 +1343,7 @@
 
     <p class="hero-tag">> INITIALIZING PROFILE </p>
 
-    <h1><span class="glitch-text">AKASH</span><br><span class="glitch-text"
-        style="color:transparent;-webkit-text-stroke: 1px var(--cyan);text-shadow: none;">SARKAR</span></h1>
+    <h1><span class="glitch-text">AKASH SARKAR</h1>
 
     <p class="hero-role">
       <span class="accent">[ </span><span id="typewriter"></span><span class="cursor-blink">_</span><span
@@ -1353,7 +1357,8 @@
 
     <div class="hero-ctas">
       <a href="#projects" class="btn-primary hover-target">VIEW PROJECTS</a>
-      <a href="assets/Akash_Sarkar_Resume.pdf" download="Akash_Sarkar_Resume.pdf" class="btn-primary hover-target">DOWNLOAD
+      <a href="assets/Akash_Sarkar_Resume.pdf" download="Akash_Sarkar_Resume.pdf"
+        class="btn-primary hover-target">DOWNLOAD
         RESUME</a>
       <a href="mailto:i.am.akash.sarkar.2001@gmail.com" class="btn-primary hover-target">CONTACT ME</a>
     </div>
