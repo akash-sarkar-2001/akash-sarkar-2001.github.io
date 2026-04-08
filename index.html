@@ -22,13 +22,36 @@
   --text: #c8d8e8;
   --text-dim: #5a7a9a;
   --text-muted: #2a4a6a;
+  --text-bright: #ffffff;
+  --nav-bg: rgba(7,11,16,0.85);
   --glow: 0 0 30px rgba(0,200,255,0.2);
   --glow-strong: 0 0 60px rgba(0,200,255,0.35);
 }
 
+[data-theme="light"] {
+  --bg: #f0f4f8;
+  --surface: #ffffff;
+  --surface2: #e2e8f0;
+  --border: rgba(0, 119, 204, 0.2);
+  --border-hot: rgba(0, 119, 204, 0.6);
+  --cyan: #0066b3;
+  --cyan-dim: rgba(0, 119, 204, 0.15);
+  --green: #008844;
+  --green-dim: rgba(0, 153, 85, 0.15);
+  --red: #cc0022;
+  --amber: #cc7700;
+  --text: #2d3748;
+  --text-dim: #4a5568;
+  --text-muted: #718096;
+  --text-bright: #0f172a;
+  --nav-bg: rgba(240, 244, 248, 0.85);
+  --glow: 0 0 30px rgba(0, 119, 204, 0.2);
+  --glow-strong: 0 0 60px rgba(0, 119, 204, 0.35);
+}
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; transition: background-color 0.3s ease; }
 
 body {
   font-family: 'DM Sans', sans-serif;
@@ -36,6 +59,7 @@ body {
   color: var(--text);
   overflow-x: hidden;
   cursor: crosshair;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ── GRID BG ── */
@@ -44,8 +68,8 @@ body::before {
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(0,200,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,200,255,0.03) 1px, transparent 1px);
+    linear-gradient(var(--cyan-dim) 1px, transparent 1px),
+    linear-gradient(90deg, var(--cyan-dim) 1px, transparent 1px);
   background-size: 60px 60px;
   pointer-events: none;
   z-index: 0;
@@ -60,8 +84,8 @@ body::after {
     0deg,
     transparent,
     transparent 2px,
-    rgba(0,0,0,0.08) 2px,
-    rgba(0,0,0,0.08) 4px
+    rgba(0,0,0,0.04) 2px,
+    rgba(0,0,0,0.04) 4px
   );
   pointer-events: none;
   z-index: 1;
@@ -76,9 +100,10 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 5%;
-  background: rgba(7,11,16,0.85);
+  background: var(--nav-bg);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .nav-logo {
@@ -105,6 +130,32 @@ nav {
 }
 
 .nav-links a:hover { color: var(--cyan); }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--cyan);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  padding: 6px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover {
+  background: var(--cyan-dim);
+  border-color: var(--border-hot);
+  box-shadow: var(--glow);
+}
 
 .nav-status {
   display: flex;
@@ -144,7 +195,7 @@ header {
   position: absolute;
   width: 600px; height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0,200,255,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--cyan-dim) 0%, transparent 70%);
   top: 50%; left: 30%;
   transform: translate(-50%,-50%);
   pointer-events: none;
@@ -171,11 +222,12 @@ header h1 {
   font-size: clamp(5rem, 12vw, 11rem);
   line-height: 0.9;
   letter-spacing: 4px;
-  color: #fff;
-  text-shadow: 0 0 80px rgba(0,200,255,0.15);
+  color: var(--text-bright);
+  text-shadow: 0 0 80px var(--cyan-dim);
   margin-bottom: 1rem;
   opacity: 0;
   animation: fadeUp 0.8s ease 0.5s forwards;
+  transition: color 0.3s;
 }
 
 header h1 span {
@@ -234,7 +286,7 @@ header h1 span {
 }
 
 .btn-primary:hover {
-  background: #fff;
+  background: var(--text-bright);
   box-shadow: var(--glow-strong);
   transform: translateY(-2px);
 }
@@ -266,8 +318,9 @@ header h1 span {
   border-top: 1px solid var(--border);
   display: flex;
   z-index: 2;
-  background: rgba(7,11,16,0.7);
+  background: var(--nav-bg);
   backdrop-filter: blur(8px);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .stat-item {
@@ -285,7 +338,7 @@ header h1 span {
   color: var(--cyan);
   display: block;
   line-height: 1;
-  text-shadow: 0 0 20px rgba(0,200,255,0.4);
+  text-shadow: 0 0 20px var(--cyan-dim);
 }
 
 .stat-label {
@@ -323,8 +376,9 @@ section {
 .section-title {
   font-family: 'Bebas Neue', cursive;
   font-size: 3rem;
-  color: #fff;
+  color: var(--text-bright);
   letter-spacing: 3px;
+  transition: color 0.3s;
 }
 
 .section-line {
@@ -346,7 +400,7 @@ section {
   grid-template-columns: 1fr auto;
   gap: 1rem;
   clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
   position: relative;
   overflow: hidden;
 }
@@ -381,10 +435,11 @@ section {
 .exp-role {
   font-family: 'Bebas Neue', cursive;
   font-size: 1.8rem;
-  color: #fff;
+  color: var(--text-bright);
   letter-spacing: 2px;
   margin-bottom: 1rem;
   line-height: 1;
+  transition: color 0.3s;
 }
 
 .exp-desc {
@@ -438,7 +493,7 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at top right, rgba(0,200,255,0.05), transparent 60%);
+  background: radial-gradient(circle at top right, var(--cyan-dim), transparent 60%);
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -462,10 +517,11 @@ section {
 .project-name {
   font-family: 'Bebas Neue', cursive;
   font-size: 2rem;
-  color: #fff;
+  color: var(--text-bright);
   letter-spacing: 2px;
   margin-bottom: 1rem;
   line-height: 1;
+  transition: color 0.3s;
 }
 
 .project-name a {
@@ -483,7 +539,7 @@ section {
   margin-bottom: 2rem;
 }
 
-tags {
+.tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -521,6 +577,7 @@ tags {
   background: var(--surface);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+  transition: background-color 0.3s;
 }
 
 .skills-grid {
@@ -633,7 +690,7 @@ tags {
 }
 
 .activity-text strong {
-  color: var(--text);
+  color: var(--text-bright);
   font-weight: 500;
 }
 
@@ -673,10 +730,11 @@ tags {
 .edu-school {
   font-family: 'Bebas Neue', cursive;
   font-size: 1.8rem;
-  color: #fff;
+  color: var(--text-bright);
   letter-spacing: 2px;
   margin-bottom: 0.3rem;
   line-height: 1;
+  transition: color 0.3s;
 }
 
 .edu-meta {
@@ -693,7 +751,7 @@ tags {
   font-family: 'Bebas Neue', cursive;
   font-size: clamp(3rem, 8vw, 7rem);
   color: transparent;
-  -webkit-text-stroke: 1px rgba(0,200,255,0.3);
+  -webkit-text-stroke: 1px var(--cyan-dim);
   letter-spacing: 4px;
   margin-bottom: 2rem;
   transition: -webkit-text-stroke 0.3s;
@@ -701,7 +759,7 @@ tags {
 
 .contact-big:hover {
   -webkit-text-stroke: 1px var(--cyan);
-  text-shadow: 0 0 80px rgba(0,200,255,0.15);
+  text-shadow: 0 0 80px var(--cyan-dim);
 }
 
 .contact-links {
@@ -799,7 +857,7 @@ footer {
 
 /* responsive */
 @media (max-width: 768px) {
-  nav { padding: 1rem 5%; }
+  nav { padding: 1rem 5%; flex-wrap: wrap; gap: 1rem;}
   .nav-links { display: none; }
   header { padding: 0 5%; }
   section { padding: 5rem 5%; }
@@ -812,7 +870,6 @@ footer {
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">AKASH.SEC</div>
   <ul class="nav-links">
@@ -821,13 +878,17 @@ footer {
     <li><a href="#skills">ARSENAL</a></li>
     <li><a href="#contact">CONTACT</a></li>
   </ul>
-  <div class="nav-status">
-    <span class="status-dot"></span>
-    AVAILABLE FOR HIRE
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+      <span id="themeIcon">☀</span> <span id="themeText">LIGHT</span>
+    </button>
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      AVAILABLE FOR HIRE
+    </div>
   </div>
 </nav>
 
-<!-- HERO -->
 <header>
   <div class="hero-bg-glow"></div>
 
@@ -870,7 +931,6 @@ footer {
   </div>
 </header>
 
-<!-- EXPERIENCE -->
 <section id="experience">
   <div class="section-header">
     <span class="section-num">01</span>
@@ -917,7 +977,6 @@ footer {
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="section-header">
     <span class="section-num">02</span>
@@ -966,7 +1025,6 @@ footer {
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="section-header">
     <span class="section-num">03</span>
@@ -994,7 +1052,6 @@ footer {
   </div>
 </section>
 
-<!-- EDUCATION + CERTS -->
 <section id="education">
   <div class="section-header">
     <span class="section-num">04</span>
@@ -1047,7 +1104,6 @@ footer {
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="section-header" style="justify-content: center; text-align: center; flex-direction: column; align-items: center; gap: 0.5rem;">
     <span class="section-num">06</span>
@@ -1073,11 +1129,45 @@ footer {
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <span class="footer-brand">AKASH.SEC // 2026</span>
   <span class="footer-copy">BUILT WITH INTENT · SECURED BY DESIGN</span>
 </footer>
+
+<script>
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = document.getElementById('themeIcon');
+  const themeText = document.getElementById('themeText');
+  
+  // Check for saved theme preference in localStorage
+  const currentTheme = localStorage.getItem('theme');
+  
+  if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    if (currentTheme === 'light') {
+      themeIcon.textContent = '☾';
+      themeText.textContent = 'DARK';
+    }
+  }
+  
+  themeToggle.addEventListener('click', () => {
+    let theme = document.documentElement.getAttribute('data-theme');
+    
+    if (theme === 'light') {
+      // Switch to Dark
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'dark');
+      themeIcon.textContent = '☀';
+      themeText.textContent = 'LIGHT';
+    } else {
+      // Switch to Light
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem('theme', 'light');
+      themeIcon.textContent = '☾';
+      themeText.textContent = 'DARK';
+    }
+  });
+</script>
 
 </body>
 </html>
