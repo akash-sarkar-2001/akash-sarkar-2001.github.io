@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akash Sarkar | Cybersecurity Professional</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600&display=swap');
+
+        :root {
+            --bg-color: #0d1117;
+            --surface-color: #161b22;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-cyan: #58a6ff;
+            --accent-green: #2ea043;
+            --terminal-green: #00ff66;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .code-font {
+            font-family: 'Fira Code', monospace;
+        }
+
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 10%;
+            background: radial-gradient(circle at top left, #1f2937, transparent 40%);
+        }
+
+        .hero-subtitle {
+            color: var(--terminal-green);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
+        }
+
+        .typing-container {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            min-height: 2.5rem;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 1.2em;
+            background-color: var(--terminal-green);
+            animation: blink 1s step-end infinite;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+
+        @keyframes blink { 50% { opacity: 0; } }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: transparent;
+            color: var(--accent-cyan);
+            border: 1px solid var(--accent-cyan);
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: 'Fira Code', monospace;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: rgba(88, 166, 255, 0.1);
+            box-shadow: 0 0 15px rgba(88, 166, 255, 0.4);
+        }
+
+        section {
+            padding: 5rem 10%;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background-color: #30363d;
+            margin-left: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--surface-color);
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 2rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-cyan);
+        }
+
+        .card h3 {
+            color: var(--accent-cyan);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .tag-container {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            background-color: rgba(46, 160, 67, 0.1);
+            color: var(--accent-green);
+            border-radius: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #30363d;
+            font-family: 'Fira Code', monospace;
+            color: var(--text-secondary);
+        }
+        
+        .contact-links a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <p class="hero-subtitle code-font">> whoami</p>
+        <h1>Akash Sarkar</h1>
+        <div class="typing-container">
+            <span id="typewriter"></span><span class="cursor"></span>
+        </div>
+        <p style="max-width: 600px; margin-bottom: 2rem;">
+            Cybersecurity postgraduate specializing in VAPT, Web Security, and Digital Forensics. Passionate about threat detection, incident analysis, and building Zero Trust architectures.
+        </p>
+        <a href="#projects" class="btn">> View_Projects</a>
+    </header>
+
+    <section id="experience">
+        <h2 class="section-title"><span style="color: var(--accent-cyan);">01.</span> Experience</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>C-DAC | Ethical Hacking Intern</h3>
+                <p class="code-font" style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">06/2025 - 07/2025</p>
+                <p>Performed enterprise-level VAPT across network and web environments. Identified 30+ high/medium-risk vulnerabilities using Nmap, Metasploit, and Wireshark.</p>
+            </div>
+            <div class="card">
+                <h3>Academy of Skill Development</h3>
+                <p class="code-font" style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">04/2025 - 06/2025</p>
+                <p>Conducted live VAPT and forensic investigations on compromised systems. Analyzed attack patterns to recommend hardening measures.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title"><span style="color: var(--accent-cyan);">02.</span> Featured Projects</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Threat Weaver</h3>
+                <p>A correlated Zero Trust security engine transforming Active Directory log telemetry into explainable threat intelligence using ML anomaly detection.</p>
+                <div class="tag-container">
+                    <span class="tag">Python</span>
+                    <span class="tag">Active Directory</span>
+                    <span class="tag">MITRE ATT&CK</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Secure File Storage</h3>
+                <p>Designed and deployed a secure file storage system on a Kali Linux VPS featuring RBAC, 2FA, AES encryption, and blockchain-based audit logs.</p>
+                <div class="tag-container">
+                    <span class="tag">Kali Linux</span>
+                    <span class="tag">Flask</span>
+                    <span class="tag">Blockchain</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Phishing Simulation Toolkit</h3>
+                <p>Developed a Python toolkit to simulate phishing attacks, test defenses, and implement user-awareness countermeasures.</p>
+                <div class="tag-container">
+                    <span class="tag">Python</span>
+                    <span class="tag">Social Engineering</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title"><span style="color: var(--accent-cyan);">03.</span> Arsenal</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; max-width: 800px;">
+            <span class="btn" style="border-color: #30363d; color: var(--text-primary);">Kali Linux</span>
+            <span class="btn" style="border-color: #30363d; color: var(--text-primary);">Python</span>
+            <span class="btn" style="border-color: #30363d; color: var(--text-primary);">Burp Suite</span>
+            <span class="btn" style="border-color: #30363d; color: var(--text-primary);">Wireshark</span>
+            <span class="btn" style="border-color: #30363d; color: var(--text-primary);">Metasploit</span>
+            <span class="btn" style="border-color: #30363d; color: var(--text-primary);">VAPT</span>
+            <span class="btn" style="border-color: #30363d; color: var(--text-primary);">Active Directory</span>
+            <span class="btn" style="border-color: #30363d; color: var(--text-primary);">Digital Forensics</span>
+        </div>
+    </section>
+
+    <footer>
+        <p>Built by Akash Sarkar | 2026</p>
+        <div class="contact-links" style="margin-top: 1rem;">
+            <a href="https://github.com/akash-sarkar-2001" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/iakash2001sarkar" target="_blank">LinkedIn</a>
+            <a href="mailto:i.am.akash.sarkar.2001@gmail.com">Email</a>
+        </div>
+    </footer>
+
+    <script>
+        const phrases = [
+            "Vulnerability Assessment & Penetration Testing",
+            "Active Directory Security",
+            "Digital Forensics Analyst",
+            "Zero Trust Architect"
+        ];
+        
+        let i = 0;
+        let j = 0;
+        let isDeleting = false;
+        const speed = 50;
+        const deleteSpeed = 30;
+        const waitTime = 2000;
+
+        function typeWriter() {
+            const currentPhrase = phrases[i];
+            const typeSpan = document.getElementById("typewriter");
+            
+            if (isDeleting) {
+                typeSpan.textContent = currentPhrase.substring(0, j - 1);
+                j--;
+            } else {
+                typeSpan.textContent = currentPhrase.substring(0, j + 1);
+                j++;
+            }
+
+            let timeoutSpeed = isDeleting ? deleteSpeed : speed;
+
+            if (!isDeleting && j === currentPhrase.length) {
+                timeoutSpeed = waitTime;
+                isDeleting = true;
+            } else if (isDeleting && j === 0) {
+                isDeleting = false;
+                i = (i + 1) % phrases.length;
+                timeoutSpeed = 500;
+            }
+
+            setTimeout(typeWriter, timeoutSpeed);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(typeWriter, 1000);
+        });
+    </script>
+</body>
+</html>
